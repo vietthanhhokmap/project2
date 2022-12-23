@@ -1,0 +1,52 @@
+
+.login-p {
+    width: 50%;
+    
+    margin: auto;
+    color: #fff;
+}
+.login-margin {
+    margin-top: 20%;
+}
+
+.TK input, .MK input {
+    border: 1px solid rgba(255,255,255,0.5);
+    background: #0d1a29;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    display: flex;
+    height: 30px;
+    width: 40%;
+    text-align: center;
+}
+.submit-login {
+    width: 15%;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.submit-login:hover {
+    background-color: rgba(24, 199, 164);
+    color: #fff;
+    
+}
+.css-php {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.sub-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;  
+    text-decoration: none;
+    
+} 
+
+

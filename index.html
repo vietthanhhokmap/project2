@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css1/style.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="container">
+		<div class="menu">
+			<ul>
+				<li><a href=""><img src="logo/logo.png.png" alt=""></a></a></li>
+        <li class="dropup">
+          <a href="" class="dropbtnn">Tải ứng dụng</a>
+          <div class="dropup-content">
+            <img src="https://media3.scdn.vn/img2/2018/5_23/R842FO.png" alt="">
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="" class="dropbtn">Chăm sóc khách hàng</a>
+          <div class="dropdown-content">
+            <a href="#" id="btnn">Trung tâm hỗ trợ</a>
+            <a href="#" id="btnn">Trả hàng hoàn tiền</a>
+          </div>
+        </li>
+				<!-- <li class="chu"><a href="">Chăm sóc khách hàng</a></li> -->
+				<li class="chu"><a href="">Kiểm tra đơn hàng</a></li>
+        <a href="login.php"><button type="button"  id="btn"><i class=""></i>Đăng nhập</button></a>
+      </ul>
+		</div>
+		<div class="timkiem">
+      <ul>
+			  <li><a href="http://www.sendo.vn"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzQiIGhlaWdodD0iMzQiIHZpZXdCb3g9IjAgMCAzNCAzNCI+CiAgPGRlZnM+CiAgICA8cG9seWdvbiBpZD0icGFnZS0xLWNvcHktNEAxeC1hIiBwb2ludHM9IjAgLjIwOCAzMy43OTMgLjIwOCAzMy43OTMgMzQgMCAzNCIvPgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPG1hc2sgaWQ9InBhZ2UtMS1jb3B5LTRAMXgtYiIgZmlsbD0iI2ZmZiI+CiAgICAgIDx1c2UgeGxpbms6aHJlZj0iI3BhZ2UtMS1jb3B5LTRAMXgtYSIvPgogICAgPC9tYXNrPgogICAgPHBhdGggZmlsbD0iI0ZFRkVGRSIgZD0iTTMxLjI5MTY3MjIsMC4yMDc0IEwyLjQ5NDcyMzcxLDAuMjA3NCBDMS4xMTc4OTg5NywwLjIwNzQgMC4wMDAxMDUxNTQ2MzksMS4yOTgyMDQxMiAwLjAwMDEwNTE1NDYzOSwyLjY0MzEzMTk2IEwwLjAwMDEwNTE1NDYzOSwzMS41NjE3MDkzIEMwLjAwMDEwNTE1NDYzOSwzMi45MDczMzgxIDEuMTE3ODk4OTcsMzMuOTk5ODk0OCAyLjQ5NDcyMzcxLDMzLjk5OTg5NDggTDMxLjI5MTY3MjIsMzMuOTk5ODk0OCBDMzIuNjY5ODk5LDMzLjk5OTg5NDggMzMuNzkzMzAxLDMyLjkwNzMzODEgMzMuNzkzMzAxLDMxLjU2MTcwOTMgTDMzLjc5MzMwMSwyLjY0MzEzMTk2IEMzMy43OTMzMDEsMS4yOTgyMDQxMiAzMi42Njk4OTksMC4yMDc0IDMxLjI5MTY3MjIsMC4yMDc0IiBtYXNrPSJ1cmwoI3BhZ2UtMS1jb3B5LTRAMXgtYikiLz4KICAgIDxwYXRoIGZpbGw9IiNFRDI1MjQiIGQ9Ik0xMiAyNi45OTkzMzE5QzEyIDI4LjEwNDA1ODggMTEuMTA0NTAyNSAyOSAxMC4wMDA1MDEyIDI5IDguODk1NDk3NDUgMjkgOCAyOC4xMDQwNTg4IDggMjYuOTk5MzMxOSA4IDI1Ljg5NTYwNzEgOC44OTU0OTc0NSAyNSAxMC4wMDA1MDEyIDI1IDExLjEwNDUwMjUgMjUgMTIgMjUuODk1NjA3MSAxMiAyNi45OTkzMzE5TTIyIDI2Ljk5OTMzMTlDMjIgMjguMTA0MDU4OCAyMS4xMDQ4MDE3IDI5IDE5Ljk5OTE2NDkgMjkgMTguODk1ODY2NCAyOSAxOCAyOC4xMDQwNTg4IDE4IDI2Ljk5OTMzMTkgMTggMjUuODk1NjA3MSAxOC44OTU4NjY0IDI1IDE5Ljk5OTE2NDkgMjUgMjEuMTA0ODAxNyAyNSAyMiAyNS44OTU2MDcxIDIyIDI2Ljk5OTMzMTlNMjMuNTM5MTI0MiAxMi44NjM4OTQ1QzIyLjA2NTU1MjMgMTIuMDY1NDE5MyAyMS4wMDc2Mzk1IDExLjQ2Njk5MDQgMjEuMDA3NjM5NSAxMC40OTQxMTU5IDIxLjAwNzYzOTUgOS42MzA2Njg0MSAyMS44NDk5MzM1IDguMDQ0MzE4NzcgMjMuNTgxMjU2NiA4LjA0MzI5MjkgMjQuMjcwNTk5MyA4LjA0MjYwODk4IDI1LjE2NzA2MzUgOC4xNTQwODc3NCAyNS4zMTg5NTI2IDguMTk5OTEwM0wyNi42MDczNTQzIDUuMzgzODc0NjhDMjQuNDE3MTc3NiA0Ljg1NTg4OTM3IDIzLjQyOTcyMTUgNS4wMjYxODUxNSAyMy40Mjk3MjE1IDUuMDI2MTg1MTUgMjAuMDMyNTc1NCA1LjE0ODk0ODU4IDE3LjA4MTg5MTEgNy45NjkwODc3MSAxNy4wODE4OTExIDExLjA5MzIyODcgMTcuMDgxODkxMSAxMy4yODc5MjQxIDE4LjgzNzY0MzggMTQuNTg0OTc2MSAyMC42OTc4NDI1IDE1LjU1Nzg1MDYgMjIuMjk5MjI3OCAxNi4zNTU5ODM4IDIzLjA0ODA1MTYgMTYuOTgwNDAxNyAyMy4wNDgwNTE2IDE3LjkyODMxMzEgMjMuMDQ4MDUxNiAxOS4xMTczMDU5IDIxLjk4MDU3OTQgMTkuNzYwODczNSAyMC43MTQxMjkgMTkuODc2NDU1OEwyMC42MTI1MTU1IDE5Ljg4NTY4ODcgMTAuNDIxMDc3MSAxOS45NTc4NDIxIDExLjAxMzA1NSAxOC4wNDMyMTE1IDE2LjcyNzEyOTIgMTguMDQzMjExNSAxNy43Njk4MTc2IDE1LjUwNDE2MyAxMC4xODA2NzQ1IDE1LjUwNDE2M0M5LjE5MTA5NDIgMTUuNTA0MTYzIDguNzgxNDUzOTYgMTUuODMwMzkyMiA4LjYwNTEzNTE3IDE2LjE1NTU5NTZMNy4wMzQ5MDY1OSAyMS41NDY5Mjc0QzYuODY1MzE0ODMgMjIuMTMwMzEwMiA3LjMzMDE4NzQ2IDIyLjc1MzAxODIgOC4wNzEyMjIwNSAyMi45NTI3MjI1IDguMTMzNTM1NTEgMjIuOTY5MTM2NiA4LjE5MzcyNDY2IDIyLjk3NDYwNzkgOC4yNTUzMzAwMiAyMi45ODQ1MjQ3TDguMjUxNzg5NDggMjIuOTk4MjAzMSA4LjQwNDc0MDcyIDIyLjk5NTgwOTRDOC40ODY4ODEyIDIzLjAwMjMwNjYgOC41NjkzNzU3MyAyMy4wMDA1OTY4IDguNjQ3OTc1NjggMjIuOTk1MTI1NUwyMC42MDkzMjkgMjIuOTY5MTM2NiAyMC43MTQxMjkgMjIuOTYzMzIzM0MyNC4yMjE3Mzk5IDIyLjcxMzY5MjkgMjcgMjAuNzg3Nzc3NiAyNyAxNy4zMDM4OTUzIDI3IDE1LjMwODIyMDIgMjUuNjU3MDc0IDEzLjkzNjYyMTEgMjMuNTM5MTI0MiAxMi44NjM4OTQ1Ii8+CiAgPC9nPgo8L3N2Zz4K" alt=""></a>
+        <li><a href="">Cho bạn</a></li>
+        <li><a href="https://www.sendo.vn/?cate_recommend=3344">Đồ dùng nhà bếp</a></li>
+        <li><a href="">Đầm, váy</a></li>
+        <li><a href="">Áo nữ</a></li>
+        <li><a href="">Dụng cụ làm vườn</a></li>
+        <li><a href="">Hoa, Cây cảnh</a></li>
+      </ul>
+			<div class="search">
+				<form class="example" action="/action_page.php" style="margin:auto;max-width:900px">
+					<input type="text" placeholder="Tìm kiếm trên Sendo" name="search2">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <div class="numbertext"></div>
+              <img src="https://media3.scdn.vn/img4/2022/07_08/JEqvBF4AuKW4RaM0L8eO.png" style="width:100%">
+              <div class="text"></div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext"></div>
+              <img src="https://media3.scdn.vn/img4/2022/06_30/aqK0ReYSvfmGHaiR1Iit.jpg" style="width:100%">
+              <div class="text"></div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext"></div>
+              <img src="https://media3.scdn.vn/img4/2022/06_30/t3cLzDBH4mBtNPusQriF.jpg" style="width:100%">
+              <div class="text"></div>
+            </div>
+
+            <div class="mySlides fade">
+              <div class="numbertext"></div>
+              <img src="https://media3.scdn.vn/img4/2022/07_08/JEqvBF4AuKW4RaM0L8eO.png" style="width:100%">
+              <div class="text"></div>
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+  </div>
+  <div class="content2">
+    <div class="item">
+      <a href="https://bom.so/1eGBaj"><img  class="img-item" src="https://media3.scdn.vn/img4/2021/11_16/P5mwphmhB0Th1z2L4J6v_simg_b5529c_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Tất Nam mùa hè Zarra Man - Lố 10 đôi chống hôi chân - dùng được cho cả nữ</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            55.000d
+          </div>
+          <div class="giacu">
+            80.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/lLYKeI"><img  class="img-item" src="https://media3.scdn.vn/img3/2019/5_8/Q3fL3i_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Bộ 5 bóng đèn Led 30W cao cấp tiết kiệm điện-Bảo hành 12 tháng</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            99.000d
+          </div>
+          <div class="giacu">
+            199.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/dH3SlN"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/05_27/uU6aXjYisaFUgOITvw9o_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Áo thun polo nam THÁI KHANG vải cá sấu có độ xốp mịn mặc mát thoải mái APOLO114 - APOLO114.</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            69.000d
+          </div>
+          <div class="giacu">
+            258.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/1JwYF6"><img  class="img-item" src="https://media3.scdn.vn/img4/2020/07_20/ur5GIj51is1UZdyKxTUt_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>[Chính hãng] Hàu Biển Oyster Extract - Tăng Sinh Lực- Vực Bản Lĩnh- Bổ Thận, Tráng Dương, Tăng Cường Sinh Lý,Hỗ Trợ Làm Chậm Quá Trình </span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            56.000d
+          </div>
+          <div class="giacu">
+            199.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/BLoDeQ"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/04_23/hhlwRZ4At9dEQ6dPNtCo_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Tai nghe M9 bluetooth 5.0,pin trâu sạc nhanh, chống nước, âm thanh HiFi True wireless siêu bass, micro HD tương thích với mọi dòng máy - tai</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            109.000d
+          </div>
+          <div class="giacu">
+            369.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/uEzPBN"><img  class="img-item" src="https://media3.scdn.vn/img3/2018/12_11/nrb3u0_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Sạc ANKER PowerPort Elite 2, 24w - A2023 - A2023</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            308.000d
+          </div>
+          <div class="giacu">
+            450.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content2">
+    <div class="item">
+      <a href="https://bom.so/WQwiTY"><img  class="img-item" src="https://media3.scdn.vn/img4/2021/12_09/g1iDoJylrHvohyVuFgDW_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Chuột Quang Dây Rapoo N100 USB - Rapoo N100</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            49.000d
+          </div>
+          <div class="giacu">
+            89.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/EVXTcq"><img  class="img-item" src="https://media3.scdn.vn/img4/2020/08_07/23cZSkLX7XhRyeXk2VEw_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>[FREESHIP] 1KG-COMBO 2 HŨ HẠT ĐIỀU RANG TỎI ỚT TLP - 1kgdieu</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            89.000d
+          </div>
+          <div class="giacu">
+            120.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/qjqntD"><img  class="img-item" src="https://media3.scdn.vn/img4/2021/12_03/CCcm3ua6ahigwQIwsBLM_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Bộ 5 tô inox tiện lợi - 1035_70229888</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            59.000d
+          </div>
+          <div class="giacu">
+            79.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/oNOoGr"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/05_31/fNDcqHCC9vy9fsaUxCai_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>DÉP XỎ NGÓN NAM DA CAO CẤP - D.KPM</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            33.000d
+          </div>
+          <div class="giacu">
+            80.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/WQwiTY"><img  class="img-item" src="https://media3.scdn.vn/img4/2021/12_02/mSa8GYHdIWKedcg7LFC2_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Cà phê hòa tan 3in1 Highland Coffee 50 gói - 17g - HL-3IN1-50-1</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            129.000d
+          </div>
+          <div class="giacu">
+            300.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 9</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/D8YFzp"><img  class="img-item" src="https://media3.scdn.vn/img4/2020/12_18/fZTkouJhoAexsGL20zMq_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Bộ đồ chơi trí tuệ bằng gỗ chữ cái, số, hình khối và câu cá - HALG5D</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            99.000d
+          </div>
+          <div class="giacu">
+            151.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content2">
+    <div class="item">
+      <a href="https://bom.so/KHoVpf"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/06_07/hXtkuithjnes7PF74Mwx_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Micro Không dây Karaoke UD22 / UD21 Cao cấp, Bo mạch Micro Chuyên dụng gắn cho Loa kéo, Tần số UHF, Reset tăng giảm âm mic trên than</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            419.000d
+          </div>
+          <div class="giacu">
+            1.000.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/dBf4qb"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/02_28/iw7x7cm1oryWyhyQUm6G_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Kệ đế gia vị 2 tầng nhựa cao cấp - để đồ thu gọn nhà bếp. tặng thêm móc dán tường 3d - 1520_44385679</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            49.000d
+          </div>
+          <div class="giacu">
+            60.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/K6muYV"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/03_28/VULcRyBMQHSzvBJcyAyf_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Combo 3 gói sốt muối kim chi O'food 180g / gói, tặng 1 hộp nhựa cao cấp 2L - 2584_74847997</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            93.000d
+          </div>
+          <div class="giacu">
+            108.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/GTx7Av"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/04_04/adQgemiD4oKCPBawFEYx_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Yến Sào Sunnest 16% , có đường lốc 6 hủ - Yến Sunnest 16% có đường , lốc 6 hủ</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            88.000d
+          </div>
+          <div class="giacu">
+            145.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/Lh16R1"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/01_13/iDBkQyy6CcPXfkNErOcq_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Nồi Lẩu Điện Đa Năng Nắp Kính size 26CM - NỒI LẨU ĐIỆN 26CM</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            144.000d
+          </div>
+          <div class="giacu">
+            399.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/ZaeEya"><img  class="img-item" src="https://media3.scdn.vn/img4/2020/04_06/PyJhoGAJT0P5R47nVIXL_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Bộ dây và vòi xịt tăng áp lực nước loại 5m 206577 - 206577</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            135.000d
+          </div>
+          <div class="giacu">
+            321.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content2">
+    <div class="item">
+      <a href="https://bom.so/yWKkuz"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/07_09/hw6fBvxk96Rvk5nBqJK1_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Áo Chống Nắng 2 Lớp Dáng Dài Pha Lưới Thoáng Khí - 666_95807671</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            109.000d
+          </div>
+          <div class="giacu">
+            220.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/2WR1j4"><img  class="img-item" src="https://media3.scdn.vn/img4/2020/11_29/hm9vqdNdC4aEJe4tjsvw_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>THẮT LƯNG NAM, THẮT LƯNG NAM, THẮT LƯNG NAM, THẮT LƯNG NAM, DÂY NỊT NAM DÂY NỊT - THẮT LƯNG K888-1</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            49.000d
+          </div>
+          <div class="giacu">
+            300.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/Fz26Ka"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/07_09/KTANNfQCRRx7eaFbJH6o_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Cân sức khỏe điện tử LOẠI 1 - Cân sức khỏe cam kết loại 1</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            94.000d
+          </div>
+          <div class="giacu">
+            200.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/dyX42Y"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/06_27/kfFslfzciEqWgaygyJR6_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>YBộ Ga Gối 3 Món Cotton Poly m2/m4/m6/m8 Hàn Quốc Miễn Phí Bo Chun Drap Ga Giường - Lá Xanh Decor - 3007_95291296</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            26.000d
+          </div>
+          <div class="giacu">
+            40.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/Odq51Q"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/05_30/OvPRjo1Gn8Dq7Os8tcDa_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Lồng bàn 5 tầng hàng Cao cấp việt nam - 1027_94091173</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            115.000d
+          </div>
+          <div class="giacu">
+            145.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 6</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/jpVKZo"><img  class="img-item" src="https://media3.scdn.vn/img4/2021/12_05/FTv4Rh3XDBp3B0l1Y0R5_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>[Combo 10 Tuýp] Viên Sủi Actiso râu ngô rau má - Thanh nhiệt giải độc,Tăng Cường Chức Năng Gan- bổ sung vitamin - [Combo 10 Tuýp] Viên Sủi Actiso râu ngô </span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            149.000d
+          </div>
+          <div class="giacu">
+            199.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 6</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content2">
+    <div class="item">
+      <a href="https://bom.so/NGuF1o"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/06_30/p19TDETpN489kqj6BUl0_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Máy lọc không khí Coway Cartridge (P) AP-1019C (P) - AP-1019C (P)</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            5.780.000d
+          </div>
+          <div class="giacu">
+            6.800.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/iTLZsK"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/06_11/xa8hnmevMtQ8ZZL7w99l_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>[Hàng Chuẩn] Lăn Khử Mùi ETIAXIL 15ML , Dứt Điểm Hôi Nách , Giảm Tiết Mồ Hôi Và Thâm Nách Hiệu Quả - [HANG CHUAN]</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            35.000d
+          </div>
+          <div class="giacu">
+            150.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/ld20LD"><img  class="img-item" src="https://media3.scdn.vn/img4/2021/11_23/fZmtqfbsZXIIjydZopwP_simg_de2fe0_250x250_maxb.png" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Bột Ngọt Vedan 1kg - Combo 2 gói - 890890890</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            99.000d
+          </div>
+          <div class="giacu">
+            142.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/IWsu3R"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/07_08/UgNxsRum2W3n7WRR77Jx_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>SIÊU SALE - DÉP CG QUAI KẸP ĐÁ 7P - DKD8273</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            99.000d
+          </div>
+          <div class="giacu">
+            275.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 9</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/U8voJ4"><img  class="img-item" src="https://media3.scdn.vn/img4/2020/11_23/xIEqq7pRWwatZVEZKmaM_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>bộ chăn gối cho bé 3 món 5 chi tiết - CT2</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            79.000d
+          </div>
+          <div class="giacu">
+            189.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="https://bom.so/nstQSx"><img  class="img-item" src="https://media3.scdn.vn/img4/2022/05_21/2aeVHnjWylkkqhNwVAMr_simg_de2fe0_250x250_maxb.jpg" alt=""></a>
+      <div class="logo">
+        <div class="logoxahang">
+          <img class="mot" src="https://media3.scdn.vn/img4/2021/04_16/BNnRsHfKT5xoQ7UKGWto.png" alt="ban ro rang">
+        </div>
+        <div class="iconshop">
+          <span>Đệm ngồi 3D cao cấp thoáng khí - Nệm lót ghế gel silicon tổ ong chống ê mông mỏi lưng - 12981219638</span>
+        </div>
+        <div class="gia">
+          <div class="chinhmaugia">
+            89.000d
+          </div>
+          <div class="giacu">
+            149.000d
+          </div>
+        </div>
+        <div class="thanhdaban">
+          <div class="iconban">
+            <span class="muc" style ="width: 20%;"></span>
+            <span class="daban">Đã bán 12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container2">
+    <div class="end">
+      <p>Copyright © 2012 Sendo.vn</p>
+      <p>Công ty Cổ phần Công nghệ Sen Đỏ</p>
+      <p>
+        Số ĐKKD: 0312776486 - Ngày cấp: 13/05/2014, được sửa đổi lần thứ 6, ngày 23/05/2016.
+      </p>
+      <p>Cơ quan cấp: Sở Kế hoạch và Đầu tư TPHCM.</p>
+      <p>
+        Địa chỉ: Tầng 5, Tòa nhà A, Vườn Ươm Doanh Nghiệp, Lô D.01, Đường Tân Thuận, Khu chế xuất Tân Thuận, Phường Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, Việt Nam.
+      </p>
+      <p>
+        <a class="email" href="mailto:lienhe@sendo.vn">Email: lienhe@sendo.vn</a>
+      </p>
+    </div>
+  </div>
+    <script>
+    var slideIndex = 0;
+    carousel();
+    function carousel() {
+        var i;
+            var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+            }
+        slideIndex++;
+        if (slideIndex > x.length) {slideIndex = 1}
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
+</body>
+</html>
